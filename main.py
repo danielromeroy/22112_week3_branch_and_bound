@@ -82,20 +82,20 @@ while len(stack) > 0:
         best_value = value
         best_placement = current_placement
 
+end = t.time()
+
 best_space, best_value = compute_space_and_value(best_placement)
 print(f"Best placement: {best_placement}",
       f"Items:          {best_placement.count('1')}",
       f"Combined size:  {best_space.__round__(1)}",
       f"Combined value: {best_value.__round__(1)}",
+      f"Runtime:        {(end - start).__round__(5)}s",
       sep="\n")
 
-end = t.time()
-
-print(f"{(end - start).__round__(5)}s")
 
 # Output (best placement in different order due to items being sorted before running the branch & bound):
 # Best placement: 0000000000000000000000000000000000000000000000000000000000000000000000000000000101111111111111111111
 # Items:          20
 # Combined size:  341.8
 # Combined value: 3000.8
-# 0.01762s
+# Runtime:        0.01762s
